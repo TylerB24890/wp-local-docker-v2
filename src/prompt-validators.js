@@ -33,6 +33,11 @@ const parseHostname = function( value ) {
 
     let hostname = parts[0];
 
+    // Make sure the hostname has a TLD assigned
+    if ( hostname.lastIndexOf( '.' ) === -1 ) {
+        hostname = hostname + '.test';
+    }
+
     return hostname;
 };
 
